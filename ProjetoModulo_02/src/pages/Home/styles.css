@@ -1,0 +1,15 @@
+.lista-pacientes {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}
+
+.lista-pacientes .card-paciente .card-info {
+    margin: 28px 20px;
+    margin-left: 0;
+}
+.home_quadro-resumo {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 16px;
+}

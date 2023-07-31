@@ -1,0 +1,193 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Samara",
+      "sobrenome": "Vilas Boas",
+      "email": "samarascaf@gmail.com",
+      "senha": "012345"
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "sobrenome": "Joaquina da Silva",
+      "email": "joaquina_maria@gmail.com",
+      "senha": "112345"
+    },
+    {
+      "id": 3,
+      "nome": "José Maria",
+      "sobrenome": "Almeida",
+      "email": "jose_almeida123@outlook.com",
+      "senha": "001124"
+    }
+  ],
+  "exames": [
+    {
+      "id": 1,
+      "exame": "Ressonância magnética"
+    },
+    {
+      "id": 2,
+      "exame": "Hemograma Completo"
+    },
+    {
+      "id": 3,
+      "exame": "Eletrocardiograma"
+    }
+  ],
+  "pacientes": [
+    {
+      "id": 1,
+      "nomeCompleto": "João Pereira",
+      "genero": "Masculino",
+      "dataNascimento": "09/05/1999",
+      "cpf": "123.456.789-00",
+      "rg": "987654321",
+      "estadoCivil": "Solteiro",
+      "telefone": "(11) 98234-5678",
+      "email": "joao.pereira@example.com",
+      "naturalidade": " Minas Gerais",
+      "contatoEmergencia": "(33) 32456-7890",
+      "listaAlergias": "Frutos do mar",
+      "listaCuidadosEspecificos": "Nenhum",
+      "convenio": "Unimed",
+      "numeroConvenio": "123456789",
+      "validadeConvenio": "31/12/2023",
+      "endereco": "Rua ABC,111"
+    },
+    {
+      "id": 2,
+      "nomeCompleto": "Clara de Souza",
+      "genero": "Feminino",
+      "dataNascimento": "15/08/1985",
+      "cpf": "987.654.321-00",
+      "rg": "123456789",
+      "estadoCivil": "Casada",
+      "telefone": "(13) 99876-2222",
+      "email": " claraa.desouza@example.com ",
+      "naturalidade": " São Paulo",
+      "contatoEmergencia": "(11) 12345-6789",
+      "listaAlergias": "Nenhuma",
+      "listaCuidadosEspecificos": "Nenhum",
+      "convenio": "Plamhuv",
+      "numeroConvenio": "987654321",
+      "validadeConvenio": "31/12/2023",
+      "endereco": "Av. Treze de Maio, 1036"
+    },
+    {
+      "id": 3,
+      "nomeCompleto": "Ana Ferreira",
+      "genero": "Feminino",
+      "dataNascimento": "20/03/1995",
+      "cpf": "111.222.333-44",
+      "rg": "444333222",
+      "estadoCivil": "Solteira",
+      "telefone": "(11) 95555-5555",
+      "email": "ana.ferreira@example.com",
+      "naturalidade": " Belo Horizonte ",
+      "contatoEmergencia": "(77) 78901-2345",
+      "listaAlergias": "Nenhum",
+      "listaCuidadosEspecificos": "Asma",
+      "convenio": "SUS",
+      "numeroConvenio": "654321987",
+      "validadeConvenio": "31/12/2025",
+      "endereco": "Rua 25 de maio, 123"
+    },
+    {
+      "id": 4,
+      "nomeCompleto": "José Serafim",
+      "genero": "Masculino",
+      "dataNascimento": "05/11/1978",
+      "cpf": "999.888.777-66",
+      "rg": "777888999",
+      "estadoCivil": "Casado",
+      "telefone": "(11) 91111-2222",
+      "email": " jjserafim@example.com ",
+      "naturalidade": " Minas Gerais",
+      "contatoEmergencia": "(99) 90123-4567",
+      "listaAlergias": "Sulfa",
+      "listaCuidadosEspecificos": "Hipertensão",
+      "convenio": "SulAmérica",
+      "numeroConvenio": "555444333",
+      "validadeConvenio": "31/12/2023",
+      "endereco": "Av. das Flores, 123"
+    },
+    {
+      "id": 5,
+      "nomeCompleto": "Mariana Costa",
+      "genero": "Feminino",
+      "dataNascimento": "25/02/1992",
+      "cpf": "555.666.777-88",
+      "rg": "333777666",
+      "estadoCivil": "Solteira",
+      "telefone": "(11) 92222-1111",
+      "email": " mariana.costa@example.com ",
+      "naturalidade": " São Paulo",
+      "contatoEmergencia": "(11) 97258-2316",
+      "listaAlergias": "Diabetes",
+      "listaCuidadosEspecificos": "Nenhum",
+      "convenio": "Golden Cross",
+      "numeroConvenio": "123123123",
+      "validadeConvenio": "31/12/2023",
+      "endereco": "Rua das Arábias, 654"
+    },
+    {
+      "id": 6,
+      "nomeCompleto": "Junior Lima",
+      "genero": "Masculino",
+      "dataNascimento": "18/09/1987",
+      "cpf": "777.666.888-44",
+      "rg": "555666777",
+      "estadoCivil": "Solteiro",
+      "telefone": "(11) 93333-4444",
+      "email": "junior.lima@example.com ",
+      "naturalidade": "Bahia",
+      "contatoEmergencia": "(51) 97777-4552",
+      "listaAlergias": "Biofenac",
+      "listaCuidadosEspecificos": "Nenhum",
+      "convenio": "SulAmérica",
+      "numeroConvenio": "987654321",
+      "validadeConvenio": "31/12/2024",
+      "endereco": "Av. das Araucárias, 1001"
+    },
+    {
+      "id": "7",
+      "nomeCompleto": "Laura Gomes",
+      "genero": "Feminino",
+      "dataNascimento": "30/07/1987",
+      "cpf": "222.888.444-88",
+      "rg": "444333222",
+      "estadoCivil": "Solteira",
+      "telefone": "(11) 94444-5555",
+      "email": " laura.gomes@example.com",
+      "naturalidade": " Salvador",
+      "contatoEmergencia": "(78) 98888-6562",
+      "listaAlergias": "Nenhum",
+      "listaCuidadosEspecificos": "Nenhum",
+      "convenio": "União Nacional",
+      "numeroConvenio": "111222333",
+      "validadeConvenio": "31/ 12/2022",
+      "endereco": "Rua das Amadas, 2344"
+    },
+    {
+      "id": 8,
+      "nomeCompleto": "Mauro da Costa",
+      "genero": "Masculino",
+      "dataNascimento": "05/07/1994",
+      "cpf": "012.345.222-90",
+      "rg": "89012345",
+      "estadoCivil": "Solteiro",
+      "telefone": "(45) 92222-1112",
+      "email": "maurocosta@email.com",
+      "naturalidade": "Belém/PA",
+      "contatoEmergencia": "(48) 92222-5425",
+      "listaAlergias": "Nenhuma",
+      "listaCuidadosEspecificos": " Nenhum",
+      "convenio": "Plamhuv",
+      "numeroConvenio": "456789012",
+      "validadeConvenio": "31/ 12/2025",
+      "endereco": "Av. dos Ipês Amarelos, 453"
+    }
+  ]
+}

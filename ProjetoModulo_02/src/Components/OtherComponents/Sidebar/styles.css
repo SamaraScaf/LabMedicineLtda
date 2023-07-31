@@ -1,0 +1,13 @@
+.sidebar {     
+background-color: rgb(65, 136, 116);  
+border-radius:3px;
+width:300px;
+padding:10px; 
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+    
+.texto {
+text-align: left;
+}
