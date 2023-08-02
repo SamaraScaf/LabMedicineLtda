@@ -85,7 +85,7 @@ function CadastroPaciente ()  {
 
           <div>
           <label>Naturalidade</label>
-          <input type="text" name="Naturalidade" value={formData.naturalidade} onChange={handleChange} /></div>
+          <input type="text" name="Contato de emergência" value={formData.naturalidade} onChange={handleChange} /></div>
 
           <h4 className='texto'>Convenio</h4>
 
