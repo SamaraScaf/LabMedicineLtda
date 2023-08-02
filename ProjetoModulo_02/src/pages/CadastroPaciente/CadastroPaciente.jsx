@@ -34,7 +34,7 @@ function CadastroPaciente ()  {
     e.preventDefault();
         console.log(formData);    
     await CadastrarPaciente(formData)
-    alert ("Cadastro salvo")
+    alert ("Cadastro salvo com sucesso!")
   };
     
   return (
@@ -43,7 +43,7 @@ function CadastroPaciente ()  {
       <form className='box' onSubmit={handleSubmit}>
         <div>
           <label>Nome Completo:</label>
-          <input type="text" name="nome" value={formData.nome} onChange={handleChange} required />
+          <input type="text" name="nome" value={formData.nomeCompleto} onChange={handleChange} required />
         </div>
         <div>
           <label>Gênero:</label>
@@ -61,7 +61,7 @@ function CadastroPaciente ()  {
         </div>
         <div>
           <label>CPF:</label>
-          <input type="text" name="CPF" value={formData.CPF} onChange={handleChange} /></div>
+          <input type="text" name="CPF" value={formData.CPG} onChange={handleChange} /></div>
 
           <div>
           <label>RG:</label>
@@ -73,7 +73,7 @@ function CadastroPaciente ()  {
 
           <div>
           <label>Telefone</label>
-          <input type="text" name="Telefone" value={formData.telefone} onChange={handleChange} /></div>
+          <input type="text" name="Telefone" value={formData.telefoneContato} onChange={handleChange} /></div>
 
           <div>
           <label>Email</label>
@@ -84,18 +84,25 @@ function CadastroPaciente ()  {
           <input type="text" name="Naturalidade" value={formData.naturalidade} onChange={handleChange} /></div>
 
           <div>
-          <label>Naturalidade</label>
-          <input type="text" name="Contato de emergência" value={formData.naturalidade} onChange={handleChange} /></div>
+          <label>Telefone de emergência</label>
+          <input type="text" name="Telefone de emergencia" value={formData.telefoneEmergencia} onChange={handleChange} /></div>
+
+          <div>
+          <label>Alergia</label>
+          <input type="text" name="Alergia" value={formData.alergias} onChange={handleChange} /></div>
+          
+          <div>
+          <label>Cuidados Específicos</label>
+          <input type="text" name="Cuidados Especificos" value={formData.cuidadosEspecificos} onChange={handleChange} /></div>
 
           <h4 className='texto'>Convenio</h4>
-
           <div>
           <label>Convenio</label>
           <input type="text" name="Convenio" value={formData.convenio} onChange={handleChange} /></div>
 
           <div>
           <label>Número da Carteira</label>
-          <input type="text" name="Numero da Carteira" value={formData.numeroConvenio} onChange={handleChange} /></div>
+          <input type="text" name="Numero do convenio" value={formData.numeroConvenio} onChange={handleChange} /></div>
 
           <div>
           <label>Validade</label>
