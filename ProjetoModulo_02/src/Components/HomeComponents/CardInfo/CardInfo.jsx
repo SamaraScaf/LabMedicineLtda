@@ -1,3 +1,7 @@
+// Este projet foi criado por mim, mas teve a contribuição, colaboração, correção de professores, 
+// ex-professores, monitores, colegas de sala que estavam 
+// dispostos a contribuir com a resolução do projeto proposto.
+
 import './styles.css'
 
 function CardInfo({ titulo, valor }) {

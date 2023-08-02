@@ -20,6 +20,7 @@ function CadastroPaciente ()  {
     numeroConvenio: '',
     validadeConvenio: '',
     endereco: '',
+    
   });
 
   const handleChange = (e) => {
