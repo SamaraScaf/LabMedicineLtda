@@ -1,35 +1,34 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 import "./styles.css"
+
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext)
 
   return (
     <div className="sidebar">
-      
       <h4 className="texto">Geral</h4>
+      {/* <button type="button" className="btn btn-primary" onClick={() => navigate('/login')}>Login</button> */}
       <button onClick={() => navigate('/')}>Início</button>
-      <button type="button" className="btn btn-primary" onClick={() => navigate('/login')}>Sair</button>
+      <button type="button" className="btn btn-primary" onClick={logout}>Sair</button>
       <h4 className="texto">Pacientes</h4>
-      <button onClick={() => navigate('/cadastro-paciente')}> 🞤 Cadastrar </button>
-      <button onClick={() => navigate('/listar-prontuario')}>Listar Prontuário</button>
-      <button onClick={() => navigate('/prontuario')}>Prontuário</button>
+      <button onClick={() => navigate('/cadastro-paciente')}>Cadastrar Paciente</button>
+      {/* <button onClick={() => navigate('/listar-prontuario')}>Listar Prontuario</button> */}
+      <button onClick={() => navigate('/prontuario')}>
+        Lista Prontuários</button>
       <h4 className="texto">Exames</h4>
-      <button onClick={() => navigate('/cadastro-consulta')}>🞤 Cadastrar Consulta</button>
-      <button onClick={() => navigate('/cadastro-exame')}>🞤 Cadastrar Exame</button>
-      
-      {/* <button onClick={() => navigate('/cadastro-paciente')}>Cadastro paciente</button> */}
+      <button onClick={() => navigate('/cadastro-exame')}>
+        Cadastro de Exame</button>
+        <button onClick={() => navigate('/cadastro-consulta')}>
+        Cadastro de Consulta</button>
     </div>
   );
  }
 
 export default Sidebar
-
-
-
-
-
-
 
 
 

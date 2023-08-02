@@ -1,33 +1,24 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import LinhaProntuarioComponent from "../../components/HomeComponents/LinhaProntuarioComponent/LinhaProntuarioComponent"
+import LinhaProntuario from "../../Components/HomeComponents/LinhaProntuarioComponent/LinhaProntuarioComponent"
+import { getProntuarios } from "../../services/prontuario"
 
 function ListagemProntuarios() {
 
-    const [prontuarios, setProntuarios] = useState([
-        {
-            id: 1,
-            paciente: 'Cesar',
-            plano: 'Plamhuv'
-        },
-        {
-            id: 2,
-            paciente: 'João',
-            plano: 'SUS'
-        },
-        {
-            id: 3,
-            paciente: 'Maria',
-            plano: 'Unimed'
-        }
-
-    ])
+    const [prontuarios, setProntuarios] = useState([])
 
     const [prontuariosFiltrados, setProntuariosFiltrados] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
-        setProntuariosFiltrados(prontuarios)
+        async function getData() {
+            const response = await getProntuarios()
+            console.log('-- response --')
+            console.log(response)
+            setProntuarios(response)
+            setProntuariosFiltrados(response)
+        }
+
+        getData()
     }, [])
 
     const handleSearch = (event) => {
@@ -36,14 +27,16 @@ function ListagemProntuarios() {
 
     const buscarPacientes = () => {
         const termo = searchTerm.toLocaleLowerCase().trim()
-        const resultado = prontuarios.filter(item => item.paciente.toLocaleLowerCase().includes(termo) || item.plano.toLocaleLowerCase().includes(termo))
+        const resultado = prontuarios.filter(item => item.nomeCompleto.toLocaleLowerCase().includes(termo) || item.convenio.toLocaleLowerCase().includes(termo))
+
         setProntuariosFiltrados(resultado)
     }
+
 
     return (
         <div>
             <div className="row text-start">
-                <h4>Pesquisar</h4>
+                <h4>Utilize a barra de pesquisa para buscar</h4>
             </div>
             <div className='row mt-3'>
                 <div className='col-10'>
@@ -55,29 +48,18 @@ function ListagemProntuarios() {
             </div>
 
             <div className="row mt-3">
-                <div className="col-2">Registro</div>
-                <div className="col-6">Nome</div>
-                <div className="col-4">Plano</div>
+                <div className="col-2">REGISTRO</div>
+                <div className="col-6">NOME</div>
+                <div className="col-4">PLANO</div>
             </div>
 
             <div className="row">
-            {/* {prontuariosFiltrados.map(prontuario => {
-                            return <tr key={prontuario.id}>
-                                <td>
-                                    <Link to='/prontuario'>
-                                        {prontuario.id}
-                                    </Link>
-                                </td>
-                                <td>{prontuario.paciente}</td>
-                                <td>{prontuario.plano}</td>
-                            </tr>
-                        })} */}
-                    {prontuariosFiltrados.map(prontuario => {
-                    return <LinhaProntuarioComponent key={prontuario.id} registro={prontuario.id} nome={prontuario.paciente} plano={prontuario.plano}/>
-                })}                
+                {prontuariosFiltrados.map(ListagemProntuario => {
+                    return <LinhaProntuario key={ListagemProntuario.id} registro={ListagemProntuario.id} nome={ListagemProntuario.nomeCompleto} plano={ListagemProntuario.convenio} />
+                })}
             </div>
 
-            
+
         </div>
     )
 }

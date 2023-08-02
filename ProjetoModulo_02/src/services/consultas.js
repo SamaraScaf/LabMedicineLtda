@@ -1,8 +1,8 @@
 const URL_API = 'http://localhost:3000'
 
- export async function CadastrarExame (formData) {
+ export async function CadastrarConsulta (formData) {
      console.log(formData)
-     fetch(`${URL_API}/exames`, {
+     fetch(`${URL_API}/consultas`, {
          method: 'POST',
          headers: {
              'Content-Type': 'application/json'

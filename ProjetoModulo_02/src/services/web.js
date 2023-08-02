@@ -13,8 +13,6 @@ export async function LoginApi(email, password) {
     const usuario = usuarios.find(usuario => 
                                     usuario.email === email 
                                     && usuario.senha === password)
-
-    
     
     return usuario
 }
@@ -23,4 +21,4 @@ export async function LoginApi(email, password) {
     const response = await fetch(`${URL_API}/pacientes`)
    const pacientes = await response.json()  
    return pacientes.length
-  }
+}

@@ -12,7 +12,7 @@ function Bootstrap() {
             <CustomButton>Custom Button</CustomButton>
             <CustomButton primary>Custom Button (Primary)</CustomButton>
             <div className="row">
-                <h4>Informações Rápidas de Pacientes</h4>
+                <h4>Informações rápidas dos pacientes</h4>
 
 
                 <div className="col-10">

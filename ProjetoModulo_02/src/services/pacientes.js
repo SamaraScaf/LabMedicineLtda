@@ -10,9 +10,9 @@ const URL_API = 'http://localhost:3000'
          body: JSON.stringify(formData)
     }).then((response) => response.json())
          .then(result => {
-             console.log('Dado salvo. ', result)
+             console.log('Informação salva. ', result)
          }).catch(err => {
-             console.log('Erro ao salvar o dado.')
+             console.log('Erro ao salvar informação.')
              console.log(err)
          })
  }

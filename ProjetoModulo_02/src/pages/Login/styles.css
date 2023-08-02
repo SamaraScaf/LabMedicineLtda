@@ -1,11 +1,11 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #dce8e5;
-  padding: 20px;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
-}
-
-h2 {
   text-align: center;
 }
 
@@ -26,9 +26,9 @@ input[type="email"],
 input[type="password"],
 input[type="text"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid rgb(65, 136, 116);
-  border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
   margin-bottom: 20px;
 }
@@ -47,8 +47,8 @@ button {
 }
 
 img {
-  width: 90px;
-  height: 60px;
+  width: 440px;
+  height: 440px;
 }
 
 a {
@@ -80,3 +80,22 @@ a {
   max-width: 400px;
   margin: 100px auto;
 }
+
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+}
+
+.image-area {
+    width: 50vw;
+    text-align: center;
+    align-items: center;
+} 
+
+ .without-account {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+} 

@@ -33,7 +33,7 @@ function Cadastro() {
         event.preventDefault()        
 
         if (senha !== confirmaSenha) {
-            alert('As senhas são diferentes')
+            alert('As senhas digitadas são diferentes')
             return;
         }
 
@@ -51,14 +51,13 @@ function Cadastro() {
 
         setTimeout(() => {
             setIsLoading(false)
-            // redirecionar para home
+            // Direciona para Home/Inicio
         }, 2500);
     }
 
     return (
         <>
             <h1>Cadastro</h1>
-
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col">

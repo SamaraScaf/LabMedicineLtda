@@ -15,7 +15,7 @@ function Login() {
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const [errorForm, setErrorForm] = useState(false) //
+    const [errorForm, setErrorForm] = useState(false) 
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -39,24 +39,27 @@ function Login() {
             inputRefs.current.email.style.borderColor = 'red'
             inputRefs.current.password.style.borderColor = 'red'
             return;
+
         }    
         login(response)
         navigate('/')
-
     }
 
+
     return (  
-        <div>
-        <div className="row text-start"> 
+
+        <div className="d-flex login">
+            <div className='image-area'>
+            <img src ="src/assets/inicio.jpg" alt="inicio" className="mb-3"/>
+            </div>
+
+        <form style={{'maxWidht': '320px'}}onSubmit={handleSubmit}>
+        <div className='form-area'>
             <h4>Não possui conta?</h4>  
             <Link className="btn btn-lg btn-primary btn-block mx-2 mt-1 mb-4" to="/cadastro"type="submit"><button>Criar Conta</button></Link>
-
-            {/* <Link className="btn btn-primary" to="/cadastro">criarUsuario</Link> */}
-            
-            </div> 
-        <form style={{'maxWidht': '320px'}}onSubmit={handleSubmit}>
-        <img src ="src/assets/conecte-se.png" alt="Conectar" className="mb-3"width="85" height="85"/>
-        {/* <h2>Login</h2> */}
+        </div> 
+        
+            <h2>Login</h2>
 
             <input required type="email" value={email} ref={(el) => (inputRefs.current.email = el)}
                 placeholder="Digite seu e-mail" onChange={handleEmailChange} />
@@ -70,7 +73,7 @@ function Login() {
 
             <div>
                     <a href="#" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Efeito ao Clicar">
-                        Esqueci minha senha
+                        Esqueci a senha
                     </a>
                 </div>
                 

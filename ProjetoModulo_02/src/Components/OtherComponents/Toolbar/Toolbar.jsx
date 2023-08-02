@@ -1,13 +1,22 @@
-// // function Toolbar() {
-// //     return (
-// //         <nav className="navbar bg-body-tertiary">
-// //             <div className="container-fluid">
-// //                 <span className="navbar-brand mb-0 h1">Navbar</span>
-// //             </div>
-// //         </nav>
-// //     )
-// // }
+import { useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
+import './styles.css'
 
-// // export default Toolbar
+const Toolbar = () => {
+  const appName = "LabMedicine"
 
+  const { user } = useContext(AuthContext)
 
+  return (
+    <div className='toolbar'>
+        <span className='app-name'>{appName}        
+        {/* <img src ="src/assets/Logo.png" alt="Logo" className="mb-3"/> */}
+</span>
+        <div className='user-info'>
+            <span className='username'>{user.nome}</span>
+        </div>
+    </div>
+  )
+}
+
+export default Toolbar

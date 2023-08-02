@@ -1,10 +1,10 @@
 import { useContext } from 'react';
+
 import {
   Routes,
   Route,
   useNavigate,
-  Outlet,
-  Navigate,
+  Navigate
 } from 'react-router-dom';
 
 import './App.css';
@@ -18,60 +18,17 @@ import Login from './pages/Login/Login.jsx';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Prontuario from './pages/Prontuario/Prontuario';
 import CadastroExame from './pages/CadastroExame/CadastroExame';
-import CadastroConsulta from './pages/CadastroConsulta/CadastroConsulta';
-//import ProntuarioPaciente from './pages/ProntuarioPaciente/ProntuarioPaciente';
-//import CadastroPaciente from './pages/CadastroPaciente/CadastroPaciente'
-import Sidebar from './Components/OtherComponents/Sidebar/Sidebar';
 import CadastroPaciente from './pages/CadastroPaciente/CadastroPaciente';
 import ListagemProntuarios from './pages/ListagemProntuarios/ListagemProntuarios';
+import CadastroConsulta from './pages/CadastroConsulta/CadastroConsulta';
 
-
-
-const Toolbar = () => {
-  return <div style={{
-    flexDirection: 'row'
-
-
-  }}>
-    <h4>Toolbar</h4>
-  </div>
-
-};
-
-
-const RotaSegura = () => {
-  console.log("RotaSegura")
-  const { isLoggedIn } = useContext(AuthContext)
-  if (!isLoggedIn) {
-    return <Navigate to="/login"></Navigate>
-  }
-  return (
-        <Outlet />
-
-  )
-}
-
-const Main = () => {
-  return (           
-      
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<RotaSegura />} >
-        <Route index element={<Home />} />
-        <Route path="cadastro" element={<Cadastro />} />
-        <Route path="prontuario" element={<Prontuario />} />
-        <Route path="cadastro-exame" element={<CadastroExame />} />
-        <Route path="cadastro-paciente" element={<CadastroPaciente />} />
-        <Route path="cadastro-consulta" element={<CadastroConsulta/>} />
-        <Route path="listar-prontuario" element={<ListagemProntuarios/>} />
-      </Route>
-    </Routes>
-  );
-};
+import Sidebar from './Components/OtherComponents/Sidebar/Sidebar';
+import Toolbar from './Components/OtherComponents/Toolbar/Toolbar';
 
 function App() {
-   const { theme } = useContext(ThemeContext)
-   const {isLoggedIn} = useContext(AuthContext)
+  const { theme } = useContext(ThemeContext)
+  const { isLoggedIn } = useContext(AuthContext)
+  // const isLoggedIn = false;
 
   return (
     <div
@@ -81,21 +38,32 @@ function App() {
         gridTemplateRows: 'auto 1fr',
         height: '100vh',
       }}
-
     >
-      <Toolbar />
+      
+      {isLoggedIn && <Toolbar />}        
 
       <div
         className="body"
         style={{
           display: 'grid',
           gridTemplateColumns: 'auto 1fr',
+          overflow: 'hidden'
         }}
       >
-        <Sidebar />
+
+        {isLoggedIn && <Sidebar />}        
 
         <main style={{ padding: '20px 100px', overflow: 'auto' }}>
-          <Main />
+          <Routes>           
+          <Route path="/login" element={!isLoggedIn ? <Login /> : <Navigate to="/" />} />              
+          <Route path="cadastro" element={!isLoggedIn ? <Cadastro /> : <Navigate to="/" />} />
+          <Route path='/' exact element={isLoggedIn ? <Home /> :  <Navigate to="/login" />} />
+          <Route path="prontuario/:id" element={isLoggedIn ? <Prontuario /> : <Navigate to="/login"/>} />
+          <Route path="cadastro-exame" element={isLoggedIn ? <CadastroExame /> : <Navigate to="/login"/>} />
+          <Route path="cadastro-paciente" element={isLoggedIn ? <CadastroPaciente /> : <Navigate to="/login"/>} />
+          <Route path="cadastro-consulta" element={isLoggedIn ? <CadastroConsulta /> : <Navigate to="/login"/>} />
+          <Route path="prontuario" element={isLoggedIn ? <ListagemProntuarios /> : <Navigate to="/login"/>} />
+          </Routes>
         </main>
       </div>
     </div>

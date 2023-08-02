@@ -33,7 +33,7 @@ const buscarPacientes = async () => {
     const response = await buscaPorNome(nomeDigitado)
     console.log('ENCONTRADO: ', response)
     if (response.length === 0) {
-        alert('Não foram encontrados pacientes com este nome digitado. Você digitou o nome completo?')
+        alert('Paciente não encontrado. Você digitou o nome correto?')
         return;
     }
 

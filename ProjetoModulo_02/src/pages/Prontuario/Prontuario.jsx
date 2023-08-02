@@ -16,10 +16,8 @@ function Prontuario() {
             setProntuario(response)
         }
 
-        if (id) {
-            
+        if (id) {   
             getData()
-
         }
     }, [])
 
@@ -30,17 +28,13 @@ function Prontuario() {
     const editarExame = () => {
         navigate(`/exame/${prontuario.exame.id}`)
     }
-    /*
-    Paciente Saul Souza
-    Convênio: Plamev
-    Alergias: Urticárias causadas por insetos
-    */
+
     return (
         <div>
             <div className="infos-prontuario text-start mb-4">
                 <h4>Paciente: {prontuario?.paciente?.nomeCompleto}</h4>
                 <h4>Convênio: {prontuario?.paciente?.convenio}</h4>
-                <h4>Alergias: "Exemplo"</h4>
+                <h4>Alergias: Exemplo</h4>
             </div>
 
             <div className="infos-consulta text-start mb-4">

@@ -1,7 +1,7 @@
 import './styles.css'
 import { useNavigate } from 'react-router-dom'
 
-function LinhaProntuarioComponent({ registro, nome, plano }) {
+function LinhaProntuario({ registro, nome, plano }) {
     const navigate = useNavigate()
 
     const navTo = () => {
@@ -25,4 +25,4 @@ function LinhaProntuarioComponent({ registro, nome, plano }) {
     )
 }
 
-export default LinhaProntuarioComponent
+export default LinhaProntuario

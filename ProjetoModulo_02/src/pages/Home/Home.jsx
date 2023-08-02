@@ -39,7 +39,6 @@ function Home() {
     const [precoMedio, setPrecoMedio] = useState(0)
 
     
-
     useEffect(() => {
         async function getData() {
             const data = await getPacientes()
@@ -107,7 +106,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* Lista dos pacientes */}
             <div className="lista-pacientes">
                 {pacientesFiltrados.map(paciente => {
                     return <CardPaciente key={paciente.id} paciente={paciente}/>

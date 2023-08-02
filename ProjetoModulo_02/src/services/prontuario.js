@@ -1,5 +1,12 @@
 const URL_API = 'http://localhost:3000'
 
+export async function getProntuarios() {
+    const res = await fetch(`${URL_API}/pacientes`)
+    const prontuarios = await res.json()
+
+    return prontuarios
+}
+
 export async function prontuarios() {
     const res = await fetch(`${URL_API}/prontuarios`)
     const res2 = await fetch(`${URL_API}/pacientes`)
@@ -10,27 +17,12 @@ export async function prontuarios() {
     let data = [];
 
     for (let i = 0; i < prontuarios.length; i++) {
-        // prontuarios[i].paciente
         const pacienteEncontrado = pacientes.find(item => item.id === prontuarios[i].paciente)
         data.push({
             ...prontuarios[i],
             paciente: pacienteEncontrado
         })    
-    }
-    
-    // [
-    //     {
-    //         "id": 1,
-    //         "paciente":  {
-    //             "id": 1,
-    //             "nome": "Cesar Abascal",
-    //             "plano": "Unimed",
-    //             "idade": 30
-    //           }
-    //       }
-    // ]
-
-    
+    }  
 }
 
 export async function getProntuario(id) {
@@ -57,6 +49,6 @@ export async function getProntuario(id) {
         exame: exameEncontrado,
         consulta: consultaEncontrada
     }
-    console.log('DADO PRONTUÁRIO: ', data)
+    console.log('INFORMAÇÕES DO PRONTUÁRIO: ', data)
     return data
 }

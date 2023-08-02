@@ -3,13 +3,13 @@ import { createContext, useState } from "react"
 // Criação do contexto
 export const ThemeContext = createContext()
 
-// Componente de provider que recebe um filho
+// Componente que recebe filho
 export const ThemeProvider = ({ children }) => {
 
     const [theme, setTheme] = useState('light')
 
     const toggleTheme = () => {
-        console.log('Alterar Tema')
+        console.log('Altera Tema')
         setTheme(theme === 'light' ? 'dark' : 'light')
     }
 
