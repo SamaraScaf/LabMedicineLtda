@@ -10,13 +10,13 @@ function Prontuario() {
 
     useEffect(() => {
         async function getData() {
-                const response = await getProntuario(id)
-                console.log('response: ', response)
+            const response = await getProntuario(id)
+            console.log('prontuario: ', response)
 
             setProntuario(response)
         }
 
-        if (id) {   
+        if (id) {
             getData()
         }
     }, [])
@@ -34,11 +34,12 @@ function Prontuario() {
             <div className="infos-prontuario text-start mb-4">
                 <h4>Paciente: {prontuario?.paciente?.nomeCompleto}</h4>
                 <h4>Convênio: {prontuario?.paciente?.convenio}</h4>
-                <h4>Alergias: Exemplo</h4>
+                <h4>Alergias: {prontuario?.paciente?.listaAlergias}</h4>
             </div>
 
             <div className="infos-consulta text-start mb-4">
-                <h4>Consulta:</h4>
+                <h4>Consultas:</h4>
+
                 <div className="card-consulta">
                     <div className='row'>
                         <div className='col'>
@@ -56,7 +57,7 @@ function Prontuario() {
             </div>
 
             <div className="infos-consulta text-start">
-                <h4>Exame:</h4>
+                <h4>Exames:</h4>
                 <div className="card-consulta">
                     <div className='row'>
                         <div className='col'>

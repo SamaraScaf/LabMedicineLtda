@@ -26,29 +26,20 @@ export async function prontuarios() {
 }
 
 export async function getProntuario(id) {
-    const res = await fetch(`${URL_API}/prontuarios/${id}`)
-    const res2 = await fetch(`${URL_API}/exames`)
-    const res3 = await fetch(`${URL_API}/consultas`)
-    const res4 = await fetch(`${URL_API}/pacientes`)
+    const pacienteFetch = await fetch(`${URL_API}/pacientes/${id}`)
+    const paciente = await pacienteFetch.json()
 
-    const prontuario = await res.json()
-    const exames = await res2.json()
-    const consultas = await res3.json()
-    const pacientes = await res4.json()
+    const examesFetch = await fetch(`${URL_API}/exames/?paciente=${id}`)
+    const exames = await examesFetch.json()
 
-    console.log('prontuario: ', prontuario)
-    console.log('exames: ', exames)
-    console.log('consultas: ', consultas)
-    console.log('pacientes: ', pacientes)
-    const pacienteEncontrado = pacientes.find(item => item.id === prontuario.paciente)
-    const exameEncontrado = exames.find(item => item.prontuario === prontuario.id)
-    const consultaEncontrada = consultas.find(item => item.prontuario === prontuario.id)
+    const consultasFetch = await fetch(`${URL_API}/consultas/?paciente=${id}`)
+    const consultas = await consultasFetch.json()    
+
     let data = {
-        ...prontuario,
-        paciente: pacienteEncontrado,
-        exame: exameEncontrado,
-        consulta: consultaEncontrada
+        paciente,
+        exames,
+        consultas
     }
-    console.log('INFORMAÇÕES DO PRONTUÁRIO: ', data)
+    // console.log('INFORMAÇÕES DO PRONTUÁRIO: ', data)
     return data
 }

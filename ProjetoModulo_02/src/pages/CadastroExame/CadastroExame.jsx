@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { buscaPorNome } from "../../services/pacientes"
 import './styles.css'
+import { CadastrarExame } from "../../services/exames"
 
 function CadastroExame() {
     const [searchTerm, setSearchTerm] = useState('')
@@ -23,18 +24,11 @@ function CadastroExame() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prevData) => ({
-          ...prevData,
-          [name]: value,
+        setForm((prevData) => ({
+            ...prevData,
+            [name]: value,
         }));
-      };
-    
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-            console.log(formData);    
-        await CadastrarPaciente(formData)
-        alert ("Cadastro salvo")
-      };
+    }
 
     const buscarPacientes = async () => {
         const nomeDigitado = searchTerm.trim()
@@ -52,9 +46,14 @@ function CadastroExame() {
         }))
     }
 
-    const onSubmit = () => {
-        // envia form
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(form);
+        await CadastrarExame(form)
+        // await CadastrarPaciente(form)
+        alert("Cadastro salvo")
     }
+
     return (
         <div className="bg-default">
             <div className='row'>
@@ -68,10 +67,10 @@ function CadastroExame() {
             </div>
 
             <div className="mt-5">
-                <form className="bg-white p-4 rounded-2 text-start">
+                <form className="bg-white p-4 rounded-2 text-start" onSubmit={handleSubmit}>
                     <div className="form-header row">
                         <div className="col">
-                            <h4>Exame de {paciente?.nome}</h4>
+                            <h4>Exame de {paciente?.nomeCompleto}</h4>
                         </div>
                         <div className="col">
                             <button type="button" className="btn btn-light">Editar</button>
@@ -84,19 +83,19 @@ function CadastroExame() {
                         <div className="col-6">
                             <div>
                                 <label className="form-label">Nome do Exame</label>
-                                <input type="text" className="form-control" placeholder="Nome do Exame" />
+                                <input name="nomeExame" type="text" className="form-control" placeholder="Nome do Exame" onChange={handleChange} />
                             </div>
                         </div>
                         <div className="col-6">
                             <div>
                                 <label className="form-label">Data</label>
-                                <input type="date" className="form-control" placeholder="Data do Exame" />
+                                <input name="data" type="date" className="form-control" placeholder="Data do Exame" onChange={handleChange} />
                             </div>
                         </div>
                         <div className="col">
                             <div>
                                 <label className="form-label">Hora</label>
-                                <input type="time" className="form-control" placeholder="Hora do Exame" />
+                                <input name="hora" type="time" className="form-control" placeholder="Hora do Exame" onChange={handleChange} />
                             </div>
                         </div>
                     </div>
@@ -105,25 +104,25 @@ function CadastroExame() {
                         <div className="col">
                             <div>
                                 <label className="form-label">Tipo do Exame</label>
-                                <input type="text" className="form-control" placeholder="Tipo do Exame" />
+                                <input name="tipoExame" type="text" className="form-control" placeholder="Tipo do Exame" onChange={handleChange} />
                             </div>
                         </div>
                         <div className="col">
                             <div>
                                 <label className="form-label">Laboratório</label>
-                                <input type="text" className="form-control" placeholder="Laboratório" />
+                                <input name="laboratorio" type="text" className="form-control" placeholder="Laboratório" onChange={handleChange} />
                             </div>
                         </div>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">URL do Documento do Exame</label>
-                        <input type="url" className="form-control" placeholder="www.url.com/exame.pdf" />
+                        <input name="urlDocumento" type="url" className="form-control" placeholder="www.url.com/exame.pdf" onChange={handleChange} />
                     </div>
 
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlTextarea1" className="form-label">Resultado</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea name="resultado" className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={handleChange}></textarea>
                     </div>
                 </form>
             </div>

@@ -5,8 +5,8 @@ function CardInfo({ titulo, valor }) {
         <div className="card-info">
             {/* <div className="card-body">                 */}
                 {/* <div className="d-flex"> */}
-                    <img src="src/assets/paciente.png" className="mb-3" width="10" height="10"/>
-                    <p className="valor-text">{valor}</p>
+                    <img src="src/assets/paciente.png"/>
+                    <p className="valor-text" style={{ 'margin': '0px'}}>{valor}</p>
                 {/* </div>                 */}
 
                 <h5 className="card-title mt-3">{titulo}</h5>

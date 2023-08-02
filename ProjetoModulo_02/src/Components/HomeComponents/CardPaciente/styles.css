@@ -26,7 +26,12 @@
     font-weight: 400;
 }
 
+.ver_mais {
+    cursor: pointer;
+}
+
 img {
     display: block;
     margin: 0 auto;
+    max-width: 90px;
 }
