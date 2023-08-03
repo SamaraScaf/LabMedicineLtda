@@ -54,7 +54,8 @@ function Login() {
 
         <div className="d-flex login">
             <div className='image-area'>
-                <img src="src/assets/inicio.jpg" alt="inicio" className="mb-3" />
+                <img src="src/assets/inicio.jpg" alt="inicio" className="mb-3" style={{ height: 'auto', maxWidth: '400px' }}
+/>
             </div>
 
             <form style={{ 'maxWidth': '320px' }} onSubmit={handleSubmit}>

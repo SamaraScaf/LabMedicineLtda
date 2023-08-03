@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CadastrarPaciente } from '../../services/pacientes';
-import './styles.css'
+
 
 function CadastroPaciente ()  {
   const [formData, setFormData] = useState({
@@ -20,7 +20,6 @@ function CadastroPaciente ()  {
     numeroConvenio: '',
     validadeConvenio: '',
     endereco: '',
-    
   });
 
   const handleChange = (e) => {
@@ -35,16 +34,17 @@ function CadastroPaciente ()  {
     e.preventDefault();
         console.log(formData);    
     await CadastrarPaciente(formData)
-    alert ("Cadastro salvo com sucesso!")
+    alert ("cadastro salvo")
   };
-    
+
+      
   return (
-    <div className='texto'>
-      <h4>Cadastro de Paciente</h4>
-      <form className='box' onSubmit={handleSubmit}>
+    <div>
+      <h2>Cadastro do Paciente</h2>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Nome Completo:</label>
-          <input type="text" name="nome" value={formData.nomeCompleto} onChange={handleChange} required />
+          <input type="text" name="nomeCompleto" value={formData.nomeCompleto} onChange={handleChange} required />
         </div>
         <div>
           <label>Gênero:</label>
@@ -56,13 +56,13 @@ function CadastroPaciente ()  {
             type="date"
             name="dataNascimento"
             value={formData.dataNascimento}
-            onChange={handleChange}
+            onChange={handleChange} 
             required
           />
         </div>
         <div>
           <label>CPF:</label>
-          <input type="text" name="CPF" value={formData.CPG} onChange={handleChange} /></div>
+          <input type="text" name="CPF" value={formData.CPF} onChange={handleChange} /></div>
 
           <div>
           <label>RG:</label>
@@ -70,78 +70,65 @@ function CadastroPaciente ()  {
 
           <div>
           <label>Estado Civil</label>
-          <input type="text" name="Estado Civil" value={formData.estadoCivil} onChange={handleChange} /></div>
+          <input type="text" name="estadoCivil" value={formData.estadoCivil} onChange={handleChange} /></div>
 
           <div>
           <label>Telefone</label>
-          <input type="text" name="Telefone" value={formData.telefoneContato} onChange={handleChange} /></div>
+          <input type="text" name="telefone" value={formData.telefone} onChange={handleChange} /></div>
 
           <div>
           <label>Email</label>
-          <input type="text" name="Email" value={formData.email} onChange={handleChange} /></div>
+          <input type="text" name="email" value={formData.email} onChange={handleChange} /></div>
 
           <div>
           <label>Naturalidade</label>
-          <input type="text" name="Naturalidade" value={formData.naturalidade} onChange={handleChange} /></div>
+          <input type="text" name="naturalidade" value={formData.naturalidade} onChange={handleChange} /></div>
 
-          <div>
-          <label>Telefone de emergência</label>
-          <input type="text" name="Telefone de emergencia" value={formData.telefoneEmergencia} onChange={handleChange} /></div>
-
-          <div>
-          <label>Alergia</label>
-          <input type="text" name="Alergia" value={formData.alergias} onChange={handleChange} /></div>
-          
-          <div>
-          <label>Cuidados Específicos</label>
-          <input type="text" name="Cuidados Especificos" value={formData.cuidadosEspecificos} onChange={handleChange} /></div>
-
-          <h4 className='texto'>Convenio</h4>
+          <h4>Convenio</h4>
           <div>
           <label>Convenio</label>
-          <input type="text" name="Convenio" value={formData.convenio} onChange={handleChange} /></div>
+          <input type="text" name="convenio" value={formData.convenio} onChange={handleChange} /></div>
 
           <div>
           <label>Número da Carteira</label>
-          <input type="text" name="Numero do convenio" value={formData.numeroConvenio} onChange={handleChange} /></div>
+          <input type="text" name="numeroConvenio" value={formData.numeroConvenio} onChange={handleChange} /></div>
 
           <div>
           <label>Validade</label>
-          <input type="text" name="Validade" value={formData.validadeConvenio} onChange={handleChange} /></div>
+          <input type="text" name="validadeConvenio" value={formData.validadeConvenio} onChange={handleChange} /></div>
 
           <h4>Endereço</h4>
-
           <div>
           <label>CEP</label>
           <input type="text" name="CEP" value={formData.CEP} onChange={handleChange} /></div>
 
           <div>
           <label>Cidade</label>
-          <input type="text" name="Cidade" value={formData.cidade} onChange={handleChange} /></div>
+          <input type="text" name="cidade" value={formData.cidade} onChange={handleChange} /></div>
 
           <div>
           <label>Estado</label>
-          <input type="text" name="Estado" value={formData.estado} onChange={handleChange} /></div>
+          <input type="text" name="estado" value={formData.estado} onChange={handleChange} /></div>
 
           <div>
           <label>Logradouro</label>
-          <input type="text" name="Logradouro" value={formData.logradouro} onChange={handleChange} /></div>
+          <input type="text" name="logradouro" value={formData.logradouro} onChange={handleChange} /></div>
 
           <div>
           <label>Número</label>
-          <input type="text" name="Número" value={formData.numero} onChange={handleChange} /></div>
+          <input type="text" name="numero" value={formData.numero} onChange={handleChange} /></div>
 
           <div>
           <label>Complemento</label>
-          <input type="text" name="Complemento" value={formData.complemento} onChange={handleChange} /></div>
+          <input type="text" name="complemento" value={formData.complemento} onChange={handleChange} /></div>
 
           <div>
           <label>Bairro</label>
-          <input type="text" name="Bairro" value={formData.bairro} onChange={handleChange} /></div>
+          <input type="text" name="bairro" value={formData.bairro} onChange={handleChange} /></div>
 
           <div>
           <label>Ponto de Referência</label>
-          <input type="text" name="Ponto de Referência" value={formData.pontoReferencia} onChange={handleChange} /></div>
+          <input type="text" name="pontoReferencia" value={formData.pontoReferencia} onChange={handleChange} /></div>
 
         
         <div>
@@ -153,3 +140,4 @@ function CadastroPaciente ()  {
 };
 
 export default CadastroPaciente;
+

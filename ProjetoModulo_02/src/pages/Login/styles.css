@@ -46,10 +46,10 @@ button {
   margin: 0px 20px 0px 20px;
 }
 
-img {
-  width: 440px;
-  height: 440px;
-}
+/* img {
+  max-width: 440px;
+  /* height: 440px; */
+ */
 
 a {
   color:rgb(65, 136, 116);
@@ -89,7 +89,7 @@ a {
 }
 
 .image-area {
-    width: 50vw;
+    width: 100vw;
     text-align: center;
     align-items: center;
 } 
